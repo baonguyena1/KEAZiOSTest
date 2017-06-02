@@ -12,12 +12,11 @@ import MapKit
 
 class LocationViewController: UIViewController {
     
-    fileprivate var locations = [MKPointAnnotation]()
     // Create instance of LocationService
-    private let service = LocationService()
+    fileprivate let service = LocationService()
     
     // Define key for post data to server
-    private enum LocationKey: CustomStringConvertible {
+    fileprivate enum LocationKey: CustomStringConvertible {
         case long
         case lat
         var description: String {
@@ -37,21 +36,18 @@ class LocationViewController: UIViewController {
         manager.requestAlwaysAuthorization()
         return manager
     }()
+    
+    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        startTimer()
+        locationManager.startUpdatingLocation()
     }
     
-    @IBAction func tapMeClicked(_ sender: UIButton) {
-        postService(fromService: service)
-    }
-    
-    private func postService<S: Postable>(fromService service: S) {
-        let location: [String: Any] = [
-            LocationKey.long.description: 12.545656,
-            LocationKey.lat.description: 13.65657
-        ]
+    // Call LocationService
+    fileprivate func postService<S: Postable>(fromService service: S, with location: [String: Any]) {
+        Logger.log(message: "post new location = \(location)", event: .i)
         service.post(with: location) { (result) in
             switch result {
             case .error(let error):
@@ -62,36 +58,45 @@ class LocationViewController: UIViewController {
         }
     }
     
+    //MARK: - Handler timer for save power, update location every 1 minutes
+    fileprivate func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1 * 60, target: self, selector: #selector(startUpdatingLocation), userInfo: nil, repeats: true)
+    }
+    
+    fileprivate func stopTimer() {
+        locationManager.stopUpdatingLocation()
+        timer?.invalidate()
+        timer = nil
+        startTimer()
+    }
+    
+    @objc private func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
 }
 
 // MARK: - CLLocationManagerDelegate
 extension LocationViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        stopTimer()
         guard let mostRecentLocation = locations.last else {
             return
         }
         
-        // Add another annotation to the map.
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = mostRecentLocation.coordinate
+        let location: [String: Any] = [
+            LocationKey.long.description: mostRecentLocation.coordinate.longitude,
+            LocationKey.lat.description: mostRecentLocation.coordinate.longitude
+        ]
         
-        // Also add to our map so we can remove old values later
-        self.locations.append(annotation)
-        
-        // Remove values if the array is too big
-        while locations.count > 100 {
-            let annotationToRemove = self.locations.first!
-            self.locations.remove(at: 0)
-            
-            // Also remove from the map
-//            mapView.removeAnnotation(annotationToRemove)
-        }
+        postService(fromService: service, with: location)
         
         if UIApplication.shared.applicationState == .active {
-//            mapView.showAnnotations(self.locations, animated: true)
+
         } else {
-            print("App is backgrounded. New location is %@", mostRecentLocation)
+            Logger.log(message: "App is backgrounded. New location is \(mostRecentLocation)", event: .i)
         }
     }
     
