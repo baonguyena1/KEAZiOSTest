@@ -91,13 +91,11 @@ extension LocationViewController: CLLocationManagerDelegate {
             LocationKey.lat.description: mostRecentLocation.coordinate.longitude
         ]
         
-        postService(fromService: service, with: location)
-        
         if UIApplication.shared.applicationState == .active {
-
         } else {
             Logger.log(message: "App is backgrounded. New location is \(mostRecentLocation)", event: .i)
         }
+        postService(fromService: service, with: location)
     }
     
 }

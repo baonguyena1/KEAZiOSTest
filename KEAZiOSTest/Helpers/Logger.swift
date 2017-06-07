@@ -15,7 +15,7 @@ enum LogEvent: String {
     case d = "[DEBUG]" // debug
     case v = "[VERBOSE]" // verbose
     case w = "[WARNING]" // warning
-    case s = "[SErVER]" // server
+    case s = "[SERVER]" // server
 }
 
 final class Logger {
