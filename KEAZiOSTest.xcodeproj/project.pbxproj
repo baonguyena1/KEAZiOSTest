@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02FCF9832B25220AF6AD080D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A731A4F3D63310D62AE828 /* CoreMedia.framework */; };
+		0822AD072C664A869DE8F058 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FCBA2B0100B31BC5AF4F9C /* BuddyBuildSDK.framework */; };
+		4F38574BF83F75511468DDA4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A64C09C420F1F2F9FE5661F /* AVFoundation.framework */; };
+		6FD728D1864F9E789194ED36 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1872960B91B35F52114DE8 /* CoreVideo.framework */; };
+		707BF8AF175A735109A6B03E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00EDB996727BFCCE925D33A /* QuartzCore.framework */; };
+		77D9CB0080B15C385EC70A09 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D14B06414B8BDA8A1BEF55 /* CoreTelephony.framework */; };
+		780019E0E9FF56F0B0BF7BAA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E144BC7FA2E1C62CBAE40B2 /* AssetsLibrary.framework */; };
+		785705AED0E15CF07DF94E06 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E759268E801D704DF9069 /* SystemConfiguration.framework */; };
+		975B26E180E4E6AEF5675779 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0CEE1781AF03651D4A4C15 /* CoreText.framework */; };
 		BF66B9231EE1C2250044D611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66B9221EE1C2250044D611 /* AppDelegate.swift */; };
 		BF66B9281EE1C2250044D611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF66B9261EE1C2250044D611 /* Main.storyboard */; };
 		BF66B92A1EE1C2250044D611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF66B9291EE1C2250044D611 /* Assets.xcassets */; };
@@ -18,6 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1872960B91B35F52114DE8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		14D14B06414B8BDA8A1BEF55 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		17A731A4F3D63310D62AE828 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		21FCBA2B0100B31BC5AF4F9C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		2E144BC7FA2E1C62CBAE40B2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		3F1D67CAE28D4C8A8EFED2B5 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		5A0CEE1781AF03651D4A4C15 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		8A64C09C420F1F2F9FE5661F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8D4E759268E801D704DF9069 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A00EDB996727BFCCE925D33A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF66B91F1EE1C2250044D611 /* KEAZiOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KEAZiOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF66B9221EE1C2250044D611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF66B9271EE1C2250044D611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,17 +54,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0822AD072C664A869DE8F058 /* BuddyBuildSDK.framework in Frameworks */,
+				780019E0E9FF56F0B0BF7BAA /* AssetsLibrary.framework in Frameworks */,
+				975B26E180E4E6AEF5675779 /* CoreText.framework in Frameworks */,
+				77D9CB0080B15C385EC70A09 /* CoreTelephony.framework in Frameworks */,
+				785705AED0E15CF07DF94E06 /* SystemConfiguration.framework in Frameworks */,
+				707BF8AF175A735109A6B03E /* QuartzCore.framework in Frameworks */,
+				4F38574BF83F75511468DDA4 /* AVFoundation.framework in Frameworks */,
+				02FCF9832B25220AF6AD080D /* CoreMedia.framework in Frameworks */,
+				6FD728D1864F9E789194ED36 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2962E1B8EA91822866F1AA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21FCBA2B0100B31BC5AF4F9C /* BuddyBuildSDK.framework */,
+				2E144BC7FA2E1C62CBAE40B2 /* AssetsLibrary.framework */,
+				5A0CEE1781AF03651D4A4C15 /* CoreText.framework */,
+				14D14B06414B8BDA8A1BEF55 /* CoreTelephony.framework */,
+				8D4E759268E801D704DF9069 /* SystemConfiguration.framework */,
+				A00EDB996727BFCCE925D33A /* QuartzCore.framework */,
+				8A64C09C420F1F2F9FE5661F /* AVFoundation.framework */,
+				17A731A4F3D63310D62AE828 /* CoreMedia.framework */,
+				0D1872960B91B35F52114DE8 /* CoreVideo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF66B9161EE1C2250044D611 = {
 			isa = PBXGroup;
 			children = (
 				BF66B9211EE1C2250044D611 /* KEAZiOSTest */,
 				BF66B9201EE1C2250044D611 /* Products */,
+				A2962E1B8EA91822866F1AA9 /* Frameworks */,
+				3F1D67CAE28D4C8A8EFED2B5 /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,10 +349,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4X4ZDEX56P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = KEAZiOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baon.KEAZiOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -316,10 +367,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4X4ZDEX56P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = KEAZiOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baon.KEAZiOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
